@@ -19,7 +19,7 @@ We are committed to making participation in our projects a harassment-free exper
 
 ## Enforcement
 
-Instances of abusive behavior may be reported to: **v3u3i87@gmail.com**
+Instances of abusive behavior may be reported to: **security@openprx.org**
 
 All complaints will be reviewed and investigated. Maintainers who do not follow the Code of Conduct may face temporary or permanent repercussions.
 

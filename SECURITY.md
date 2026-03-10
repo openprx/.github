@@ -12,7 +12,7 @@
 
 **Do not open a public issue for security vulnerabilities.**
 
-Please email security concerns to: **v3u3i87@gmail.com**
+Please email security concerns to: **security@openprx.org**
 
 Include:
 - Description of the vulnerability
