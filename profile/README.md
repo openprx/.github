@@ -4,7 +4,7 @@
 
 # OpenPRX
 
-**AI-native development infrastructure. Open source. Built with Rust.**
+**AI-native development infrastructure. Open source. Built with Rust & Go.**
 
 [Website](https://openprx.dev) · [GitHub](https://github.com/openprx)
 
@@ -29,11 +29,21 @@ Local-first MCP memory component for coding agents. Store, recall, evolve.
 **Tech:** Rust  
 **Highlights:** stdio + HTTP transport · Full toolchain (store, recall, update, forget, evolve) · Governance controls · Hybrid retrieval (lexical + vector + rerank) · Works with Codex, Claude Code, OpenClaw
 
+### 📦 [Fenfa](https://github.com/openprx/fenfa)
+Self-hosted app distribution platform. Upload builds, get install pages with QR codes, manage releases.  
+**Tech:** Go · SQLite · Embedded frontend  
+**Highlights:** Multi-platform (iOS/Android/macOS/Windows/Linux) · iOS UDID binding · Apple Developer API integration · S3/R2 storage · Single binary deployment · i18n (EN/ZH)
+
+### 💬 [wacli](https://github.com/openprx/wacli)
+WhatsApp JSON-RPC daemon for programmatic messaging.  
+**Tech:** Go  
+**Highlights:** JSON-RPC API · Multi-session · Webhook integration · Lightweight daemon
+
 ---
 
 <div align="center">
 
-**Manage → Operate → Remember**
+**Manage → Operate → Remember → Distribute → Connect**
 
 ```
 ┌─────────────┐     MCP      ┌─────────────┐
@@ -42,13 +52,15 @@ Local-first MCP memory component for coding agents. Store, recall, evolve.
 └──────┬──────┘              └──────┬──────┘
        │                            │
        └──────────┬─────────────────┘
-                  ▼
-          ┌──────────────┐
-          │  prx-memory  │
-          │  (Remember)  │
-          └──────────────┘
+                  │
+     ┌────────────┼────────────┐
+     ▼            ▼            ▼
+┌──────────┐ ┌──────────┐ ┌──────────┐
+│prx-memory│ │  Fenfa   │ │  wacli   │
+│(Remember)│ │(Distrib.)│ │(Connect) │
+└──────────┘ └──────────┘ └──────────┘
 ```
 
-Apache-2.0 Licensed · [openprx.dev](https://openprx.dev)
+MIT OR Apache-2.0 Licensed · [openprx.dev](https://openprx.dev)
 
 </div>
