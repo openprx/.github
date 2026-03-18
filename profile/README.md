@@ -4,62 +4,77 @@
 
 # OpenPRX
 
-**AI-native development infrastructure. Open source. Built with Rust & Go.**
+**Open-source pipeline for AI-autonomous software engineering.**
 
-[Website](https://openprx.dev) · [GitHub](https://github.com/openprx)
+AI agents plan work, write code, distribute builds, and defend production — governed, auditable, and fully open source.
+
+[Website](https://openprx.dev) · [Docs](https://openprx.dev/getting-started/overview/) · [GitHub](https://github.com/openprx)
 
 ---
 
 </div>
 
-## Projects
+## The Pipeline
 
-### 🔧 [OpenPR](https://github.com/openprx/openpr)
-Open-source project management platform with built-in governance, AI agent integration, and MCP support.  
-**Tech:** Rust (Axum + SeaORM) · SvelteKit · PostgreSQL  
-**Highlights:** Issues & Kanban · Sprint planning · Governance center (proposals, voting, trust scores) · MCP server with 34 tools across 3 protocols (HTTP, stdio, SSE) · Bot token auth · File attachments
+### 1. Plan — [OpenPR](https://github.com/openprx/openpr)
+AI-native project management. Issues, boards, sprints, governance, and a 34-tool MCP server that lets AI agents create tasks, vote on proposals, and manage projects.
+**Tech:** Rust (Axum) · SvelteKit · PostgreSQL
+**Key numbers:** 38 database tables · 34 MCP tools · 3 transports (HTTP, stdio, SSE) · 30 webhook event types
 
-### 🤖 [PRX](https://github.com/openprx/prx)
-Self-evolving AI assistant framework with multi-provider inference and governed sub-agents.  
-**Tech:** Rust  
-**Highlights:** 14 AI providers · 19 messaging channels · Self-evolution system (~9,500 lines) · OAuth auto-refresh · Governed sub-agents · Production-hardened security
+### 2. Think — [PRX](https://github.com/openprx/prx)
+The AI brain. Routes conversations across 19 messaging channels and 14 LLM providers. Self-evolving architecture (~9,800 lines) that improves its own behavior through governed feedback loops.
+**Tech:** Rust
+**Key numbers:** 19 channels · 14 providers · 9,800 lines of self-evolution code · 5-layer security pipeline
 
-### 🧠 [prx-memory](https://github.com/openprx/prx-memory)
-Local-first MCP memory component for coding agents. Store, recall, evolve.  
-**Tech:** Rust  
-**Highlights:** stdio + HTTP transport · Full toolchain (store, recall, update, forget, evolve) · Governance controls · Hybrid retrieval (lexical + vector + rerank) · Works with Codex, Claude Code, OpenClaw
+### 3. Build — [prx-memory](https://github.com/openprx/prx-memory) · [openpr-webhook](https://github.com/openprx/openpr-webhook)
+Code generation agents with persistent memory. The webhook dispatcher turns OpenPR events into coding tasks; prx-memory gives agents a local-first MCP memory layer with hybrid retrieval.
+**Tech:** Rust
+**Key numbers (prx-memory):** 14 MCP tools · lexical + vector + rerank retrieval · MSES evolution scoring
 
-### 📦 [Fenfa](https://github.com/openprx/fenfa)
-Self-hosted app distribution platform. Upload builds, get install pages with QR codes, manage releases.  
-**Tech:** Go · SQLite · Embedded frontend  
-**Highlights:** Multi-platform (iOS/Android/macOS/Windows/Linux) · iOS UDID binding · Apple Developer API integration · S3/R2 storage · Single binary deployment · i18n (EN/ZH)
+### 4. Ship — [Fenfa](https://github.com/openprx/fenfa)
+Self-hosted app distribution. Upload builds, get install pages with QR codes, manage releases across 5 platforms.
+**Tech:** Go · SQLite · Vue
+**Key numbers:** iOS/Android/macOS/Windows/Linux · Apple Developer API integration · S3/R2 storage
 
-### 💬 [wacli](https://github.com/openprx/wacli)
-WhatsApp JSON-RPC daemon for programmatic messaging.  
-**Tech:** Go  
-**Highlights:** JSON-RPC API · Multi-session · Webhook integration · Lightweight daemon
+### 5. Protect — [PRX-WAF](https://github.com/openprx/prx-waf) · [PRX-SD](https://github.com/openprx/prx-sd)
+Production defense. PRX-WAF is a 17-phase web application firewall built on Pingora. PRX-SD is an antivirus engine with hash matching, YARA rules, and heuristic analysis.
+**Tech:** Rust
+**Key numbers (WAF):** 17 processing phases · 644+ built-in rules · OWASP CRS · GeoIP · bot detection
+**Key numbers (SD):** 5 threat intel sources · 64 built-in YARA rules · PE/ELF/MachO heuristics
 
 ---
 
 <div align="center">
 
-**Manage → Operate → Remember → Distribute → Connect**
+```
+Plan            Think           Build           Ship            Protect
+ │               │               │               │               │
+ ▼               ▼               ▼               ▼               ▼
+┌──────┐  MCP  ┌──────┐ events ┌──────────┐    ┌──────┐    ┌─────────┐
+│OpenPR│◄─────►│ PRX  │───────►│ Webhook  │    │Fenfa │    │ PRX-WAF │
+│      │       │      │       │ Dispatch │    │      │    │ PRX-SD  │
+└──────┘       └──────┘       └────┬─────┘    └──────┘    └─────────┘
+                                   │
+                              ┌────▼─────┐
+                              │prx-memory│
+                              └──────────┘
+```
 
-```
-┌─────────────┐     MCP      ┌─────────────┐
-│   OpenPR    │◄────────────►│     PRX     │
-│  (Manage)   │              │  (Operate)  │
-└──────┬──────┘              └──────┬──────┘
-       │                            │
-       └──────────┬─────────────────┘
-                  │
-     ┌────────────┼────────────┐
-     ▼            ▼            ▼
-┌──────────┐ ┌──────────┐ ┌──────────┐
-│prx-memory│ │  Fenfa   │ │  wacli   │
-│(Remember)│ │(Distrib.)│ │(Connect) │
-└──────────┘ └──────────┘ └──────────┘
-```
+</div>
+
+## Supporting Repos
+
+| Repo | Description |
+|------|-------------|
+| [prx-sd-signatures](https://github.com/openprx/prx-sd-signatures) | Threat intelligence database for PRX-SD (hash signatures + YARA rules) |
+| [prx_email](https://github.com/openprx/prx_email) | Email plugin for PRX (IMAP/SMTP) |
+| [voice_talk_realtime](https://github.com/openprx/voice_talk_realtime) | Browser-side real-time voice conversation via WebAssembly |
+| [wacli](https://github.com/openprx/wacli) | WhatsApp CLI — fork with added JSON-RPC and webhook features |
+| [homebrew-tap](https://github.com/openprx/homebrew-tap) | Homebrew tap for macOS/Linux |
+| [scoop-bucket](https://github.com/openprx/scoop-bucket) | Scoop bucket for Windows |
+| [site](https://github.com/openprx/site) | openprx.dev website source |
+
+<div align="center">
 
 MIT OR Apache-2.0 Licensed · [openprx.dev](https://openprx.dev)
 
