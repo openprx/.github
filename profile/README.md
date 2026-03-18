@@ -24,7 +24,7 @@ AI-native project management. Issues, boards, sprints, governance, and a 34-tool
 ### 2. Think — [PRX](https://github.com/openprx/prx)
 The AI brain. Routes conversations across 19 messaging channels and 14 LLM providers. Self-evolving architecture that improves its own behavior through governed feedback loops.
 **Tech:** Rust
-**Key numbers:** 19 channels · 14 providers · 9,800 lines of self-evolution code · 5-layer security pipeline
+**Key numbers:** 19 channels · 14 providers ·  5-layer security pipeline
 
 ### 3. Build — [prx-memory](https://github.com/openprx/prx-memory) · [openpr-webhook](https://github.com/openprx/openpr-webhook)
 Code generation agents with persistent memory. The webhook dispatcher turns OpenPR events into coding tasks; prx-memory gives agents a local-first MCP memory layer with hybrid retrieval.
