@@ -22,7 +22,7 @@ AI-native project management. Issues, boards, sprints, governance, and a 34-tool
 **Key numbers:** 38 database tables · 34 MCP tools · 3 transports (HTTP, stdio, SSE) · 30 webhook event types
 
 ### 2. Think — [PRX](https://github.com/openprx/prx)
-The AI brain. Routes conversations across 19 messaging channels and 14 LLM providers. Self-evolving architecture (~9,800 lines) that improves its own behavior through governed feedback loops.
+The AI brain. Routes conversations across 19 messaging channels and 14 LLM providers. Self-evolving architecture that improves its own behavior through governed feedback loops.
 **Tech:** Rust
 **Key numbers:** 19 channels · 14 providers · 9,800 lines of self-evolution code · 5-layer security pipeline
 
