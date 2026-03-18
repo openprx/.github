@@ -1,29 +1,19 @@
 # Security Policy
 
-## Supported Versions
-
-| Project | Supported |
-|---------|-----------|
-| OpenPR | Latest release |
-| PRX | main branch |
-| prx-memory | main branch |
-
 ## Reporting a Vulnerability
 
-**Do not open a public issue for security vulnerabilities.**
+If you discover a security vulnerability in any OpenPRX project, please report it responsibly.
 
-Please email security concerns to: **security@openprx.org**
+**Do NOT open a public GitHub issue for security vulnerabilities.**
 
-Include:
-- Description of the vulnerability
-- Steps to reproduce
-- Potential impact
-- Suggested fix (if any)
+Instead, please email: **security@openprx.dev**
 
-We will acknowledge receipt within 48 hours and provide a timeline for resolution.
+You should receive a response within 48 hours. We will work with you to understand the issue and coordinate a fix before any public disclosure.
 
-## Disclosure Policy
+## Supported Versions
 
-- We follow responsible disclosure practices
-- Security patches are released as soon as possible
-- Credit is given to reporters (unless anonymity is requested)
+We provide security updates for the latest release of each project.
+
+## Scope
+
+This policy applies to all repositories under the [OpenPRX](https://github.com/openprx) organization.
