@@ -8,7 +8,7 @@
 
 AI agents plan work, write code, distribute builds, and defend production — governed, auditable, and fully open source.
 
-[Website](https://openprx.dev) · [Docs](https://openprx.dev/getting-started/overview/) · [GitHub](https://github.com/openprx)
+[Website](https://openprx.dev) · [Docs](https://docs.openprx.dev) · [Community](https://community.openprx.dev) · [GitHub](https://github.com/openprx)
 
 ---
 
@@ -76,6 +76,6 @@ Plan            Think           Build           Ship            Protect
 
 <div align="center">
 
-MIT OR Apache-2.0 Licensed · [openprx.dev](https://openprx.dev)
+MIT OR Apache-2.0 Licensed · [openprx.dev](https://openprx.dev) · [Docs](https://docs.openprx.dev) · [Community](https://community.openprx.dev)
 
 </div>
