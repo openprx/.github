@@ -17,9 +17,9 @@ AI agents plan work, write code, distribute builds, and defend production — go
 ## The Pipeline
 
 ### 1. Plan — [Sylvode](https://github.com/openprx/sylvode)
-*Formerly OpenPR.* AI-native project management. Issues, boards, sprints, governance, and a 34-tool MCP server that lets AI agents create tasks, vote on proposals, and manage projects.
+*Formerly OpenPR.* AI-native project management. Issues, boards, sprints, governance, universal business forms, WASM plugins, and a 140-tool MCP server that lets AI agents create tasks, vote on proposals, and manage projects.
 **Tech:** Rust (Axum) · SvelteKit · PostgreSQL
-**Key numbers:** 38 database tables · 34 MCP tools · 3 transports (HTTP, stdio, SSE) · 30 webhook event types
+**Key numbers:** 140 MCP tools · 3 transports (HTTP, stdio, SSE) · 4 MCP resources + 22 resource templates · 6 scenario templates · HMAC-signed webhooks
 
 ### 2. Think — [PRX](https://github.com/openprx/prx)
 The AI brain. Routes conversations across 19 messaging channels and 14 LLM providers. Self-evolving architecture that improves its own behavior through governed feedback loops.
