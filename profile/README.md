@@ -16,8 +16,8 @@ AI agents plan work, write code, distribute builds, and defend production — go
 
 ## The Pipeline
 
-### 1. Plan — [OpenPR](https://github.com/openprx/openpr)
-AI-native project management. Issues, boards, sprints, governance, and a 34-tool MCP server that lets AI agents create tasks, vote on proposals, and manage projects.
+### 1. Plan — [Sylvode](https://github.com/openprx/sylvode)
+*Formerly OpenPR.* AI-native project management. Issues, boards, sprints, governance, and a 34-tool MCP server that lets AI agents create tasks, vote on proposals, and manage projects.
 **Tech:** Rust (Axum) · SvelteKit · PostgreSQL
 **Key numbers:** 38 database tables · 34 MCP tools · 3 transports (HTTP, stdio, SSE) · 30 webhook event types
 
@@ -26,8 +26,8 @@ The AI brain. Routes conversations across 19 messaging channels and 14 LLM provi
 **Tech:** Rust
 **Key numbers:** 19 channels · 14 providers ·  5-layer security pipeline
 
-### 3. Build — [prx-memory](https://github.com/openprx/prx-memory) · [openpr-webhook](https://github.com/openprx/openpr-webhook)
-Code generation agents with persistent memory. The webhook dispatcher turns OpenPR events into coding tasks; prx-memory gives agents a local-first MCP memory layer with hybrid retrieval.
+### 3. Build — [prx-memory](https://github.com/openprx/prx-memory) · [Sylvode Webhook](https://github.com/openprx/openpr-webhook)
+Code generation agents with persistent memory. The webhook dispatcher turns Sylvode events into coding tasks; prx-memory gives agents a local-first MCP memory layer with hybrid retrieval.
 **Tech:** Rust
 **Key numbers (prx-memory):** 14 MCP tools · lexical + vector + rerank retrieval · MSES evolution scoring
 
@@ -50,10 +50,10 @@ Production defense. PRX-WAF is a 17-phase web application firewall built on Ping
 Plan            Think           Build           Ship            Protect
  │               │               │               │               │
  ▼               ▼               ▼               ▼               ▼
-┌──────┐  MCP  ┌──────┐ events ┌──────────┐    ┌──────┐    ┌─────────┐
-│OpenPR│◄─────►│ PRX  │───────►│ Webhook  │    │Fenfa │    │ PRX-WAF │
-│      │       │      │       │ Dispatch │    │      │    │ PRX-SD  │
-└──────┘       └──────┘       └────┬─────┘    └──────┘    └─────────┘
+┌───────┐ MCP  ┌──────┐ events ┌──────────┐    ┌──────┐    ┌─────────┐
+│Sylvode│◄────►│ PRX  │───────►│ Webhook  │    │Fenfa │    │ PRX-WAF │
+│       │      │      │       │ Dispatch │    │      │    │ PRX-SD  │
+└───────┘      └──────┘       └────┬─────┘    └──────┘    └─────────┘
                                    │
                               ┌────▼─────┐
                               │prx-memory│
